@@ -5,8 +5,7 @@ var myMap = L.map("map", {
   zoom: 4
 });
 
-// Add a tile layer (the background map image) to our map
-// We use the addTo method to add objects to our map
+// Add a tile layer 
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
@@ -14,12 +13,21 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-// Create a new marker
-// Pass in some initial options, and then add it to the map using the addTo method
-var marker = L.marker([45.52, -122.67], {
-  draggable: true,
-  title: "My First Marker"
-}).addTo(myMap);
 
-// Binding a pop-up to our marker
-marker.bindPopup("Hello There!");
+// Add the markers
+for (var i = 0; i < data.length; i++) {
+  var lat = parseFloat(data[i].latitude);
+  var long = parseFloat(data[i].longitude);
+  var lon = long - (long * 2);
+  //console.log(lat, lon);
+  var list = "<dl>"
+           + "<dd>" + data[i].name + "</dd>"
+           + "<dd>" + data[i].address1 + "</dd>" 
+           + "<dd>" + data[i].city + " " + data[i].state + "</dd>"
+           + "<dd>" + data[i].email + " " + data[i].phone + "</dd>" 
+           + "</d1>";
+           
+  
+  var marker = L.marker([lat, -lon]).addTo(myMap);
+  marker.bindPopup(list);
+};
