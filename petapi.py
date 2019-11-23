@@ -18,10 +18,13 @@ def get_url(url):
     bearer_token = _get_bearer_token()
     return requests.get(url, headers={"Authorization": f"Bearer {bearer_token}"})
 
-response = get_url("https://api.petfinder.com/v2/animals?page=5")
 
-x = json.loads(response.text)
+def get_pets(num_pages):
+    pets = []
+    for i in range(1, num_pages): 
+        response = get_url(f"https://api.petfinder.com/v2/animals?page={i}")
+        x = json.loads(response.text)
+        pets.extend(x["animals"])
 
-print(json.dumps(x, indent = 4, sort_keys = True))
+    return pets
 
-# print(get_url("https://api.petfinder.com/v2/types/{dog}/breeds").json)
