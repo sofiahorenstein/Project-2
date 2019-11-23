@@ -21,9 +21,9 @@ def get_pets_by_breed(breed):
 @app.route("/update")
 def update():
     pets = mongo.db.pets
-    pet_data = petapi.get_pets(5)
+    pet_data = petapi.get_pets(10)
     pets.update({}, {"pets": pet_data}, upsert=True)
-    return 
+    return jsonify(pet_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
