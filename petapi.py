@@ -2,8 +2,8 @@ import requests
 import json
 
 
-API_KEY = "SVXPUGK0JZmTMpZxnIdoN1kn5enX1L4YI9O3zHjrkIGQ60SZc9"
-SECRET = "bMGoUiUB5sa0pswsY4mpzsfBA9l8sZbL82DerzD0"
+API_KEY = "n82rLvtiyqelro1uziEkHOjNpk1Iq9MF3r0OfSBDA6bQltSExj"
+SECRET = "0jr9tbtWMj362Oe3ha92r4tyLe5W05bmNoKYUjrI"
 
 
 def _get_bearer_token():
