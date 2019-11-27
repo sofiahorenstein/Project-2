@@ -37,7 +37,7 @@ def update():
 @app.route("/")
 def index():
     # write a statement that finds all the items in the db and sets it to a variable
-    current_pet_data = list(mongo.db.pets.find())
+    current_pet_data = mongo.db.pets.find()
     print(current_pet_data)
 
     # render an index.html template and pass it the data you retrieved from the database
