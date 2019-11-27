@@ -1,11 +1,20 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_pymongo import PyMongo
 import petapi
+import requests
+import json 
+import os
+import pandas as pd 
+
 
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/petfinder_app"
+mongo_password = os.environ['MONGODB_PASSWORD']
+mongo_connection_string = f"mongodb+srv://sofiahorenstein:{mongo_password}@cluster0-lursa.mongodb.net/test?retryWrites=true&w=majority"
+
+# app.config["MONGO_URI"] = "mongodb://localhost:27017/petfinder_app"
+app.config["MONGO_URI"] = mongo_connection_string
 mongo = PyMongo(app)
 
 # Or set inline
@@ -24,6 +33,15 @@ def update():
     pet_data = petapi.get_pets(10)
     pets.update({}, {"pets": pet_data}, upsert=True)
     return jsonify(pet_data)
+
+@app.route("/")
+def index():
+    # write a statement that finds all the items in the db and sets it to a variable
+    current_pet_data = list(db.collection.find())
+    print(current_pet_data)
+
+    # render an index.html template and pass it the data you retrieved from the database
+    return render_template("index.html", current_pet_data=current_pet_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
