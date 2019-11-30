@@ -27,26 +27,24 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="./index.html">Paw-suit of Happiness</a>
-        <form>
-            <select id="dropdown" name="dropdown" onchange="selectState(this)"> 
-                <option>Select a state</option>
-                <option value="NJ">NJ</option>
-                <option value="NY">NY</option>
-                <option value="CT">CT</option>
-            </select>
+            <div>
+                <select id="dropdown" name="dropdown" onchange="selectState(this)"> 
+                    <option>Select a state</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NY">NY</option>
+                    <option value="CT">CT</option>
+                </select>
         
-            <input type="hidden" name="hiddenInput" id="hiddenInput" value="" />
-            <button onclick="clearMarkers()">Clear</button>
+                <input type="hidden" name="hiddenInput" id="hiddenInput" value="" />
+                <button onclick="clearMarkers()">Clear</button>
             
-        </form>
+            </div>
         
-        <div id="result"> </div>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -55,7 +53,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./data.html">Dogs Near Me</a>
                     </li>
-
                 </ul>
             </div>
 

@@ -29,8 +29,8 @@ function changeHiddenInput(objDropDown) {
     result.innerHTML = chosenState || "";
 }
 
-function clearMarkers(layerGroup) {
-  layerGroup.clearLayers();
+function clearMarkers() {
+  myMap.clearLayers();
 }
 
 states = [ { "state" : "NY",
@@ -52,6 +52,7 @@ function selectState(objDropDown) {
   var objHidden = document.getElementById("hiddenInput");
   objHidden.value = objDropDown.value;
   var chosenState = objHidden.value;
+
   for (var j = 0; j < states.length; j++) {
     if (states[j].state === chosenState){
       var stateLat = states[j].lat;
@@ -61,8 +62,9 @@ function selectState(objDropDown) {
     }
   }
   
-  for (var i = 0; i < data.length; i++) {
+  
 
+  for (var i = 0; i < data.length; i++) {
     if (data[i].state === chosenState){
       var lat = parseFloat(data[i].latitude);
       var long = parseFloat(data[i].longitude);
@@ -75,12 +77,14 @@ function selectState(objDropDown) {
            + "<dd>" + data[i].city + " " + data[i].state + "</dd>"
            + "<dd>" + data[i].email + " " + data[i].phone + "</dd>" 
            + "</d1>";
-      var layerGroup = L.clearLayers().layerGroup().addTo(myMap);
-      var marker = L.marker([lat, -lon]).addTo(layerGroup);
-      marker.bindPopup(list);
+      
+      
+           var layerGroup = L.layerGroup().addTo(myMap);
+           var marker = L.marker([lat, -lon]).addTo(layerGroup);
+           marker.bindPopup(list);
+      
     }
   };
-  
 }
 
 
