@@ -46,16 +46,36 @@ def index():
     
 @app.route('/wheel')
 def wheel():
-    return render_template("wheel2.html")
+    return render_template("wheel.html")
 
 
 @app.route("/shelters")
 def shelters():
     return render_template("locations.html")
 
-@app.route("/pie")
-def mainData():
-    pass
+@app.route("/pie1")
+def pie1():
+    return render_template("catage.html")
+    
+@app.route("/pie2")
+def pie2():
+    return render_template("catbreed.html")
+
+@app.route("/pie3")
+def pie3():
+    return render_template("catgender.html")
+
+@app.route("/pie4")
+def pie4():
+    return render_template("dogage.html")
+
+@app.route("/pie5")
+def pie5():
+    return render_template("dogbreed.html")
+
+@app.route("/pie6")
+def pie6():
+    return render_template("doggender.html")
 
 
 if __name__ == "__main__":
