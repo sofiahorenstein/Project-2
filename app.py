@@ -35,7 +35,7 @@ def update():
     return jsonify(pet_data)
 
 @app.route("/")
-def index():
+def index(): 
     # write a statement that finds all the items in the db and sets it to a variable
     current_pet_data = mongo.db.pets.find()
     print(current_pet_data)
