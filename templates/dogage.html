@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+
+
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	title: {
+		text: "Dogs by Age"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+
+			{label:"Adult",y:57},
+			{label:"Baby",y:17},
+			{label:"Senior",y:6},
+			{label:"Young",y:18}
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer1" style="height: 500px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

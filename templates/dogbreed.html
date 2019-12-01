@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+
+
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	title: {
+		text: "Dogs by Breed"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+
+			{label:"American Bulldog",y:1},
+			{label:"American Staffordshire Terrier",y:1},
+			{label:"Australian Cattle Dog \/ Blue Heeler",y:1},
+			{label:"Beagle",y:1},
+            {label:"Border Collie",y:4},
+			{label:"Boston Terrier",y:1},
+			{label:"Boxer",y:6},
+			{label:"Cairn Terrier",y:2},
+            {label:"Cattle Dog",y:3},
+			{label:"Chihuahua",y:9},
+			{label:"Cocker Spaniel",y:1},
+			{label:"Dachshund",y:2},
+            {label:"German Shepherd",y:2},
+			{label:"Hound",y:3},
+			{label:"Husky",y:1},
+			{label:"Jack Russell Terrier",y:1},
+            {label:"Labrador Retriever",y:10},
+			{label:"Maltese",y:2},
+			{label:"Mixed Breed",y:9},
+			{label:"Parson Russell Terrier",y:2},
+            {label:"Pekingese",y:3},
+			{label:"Pit Bull Terrier",y:14},
+			{label:"Pointer",y:1},
+			{label:"Pomeranian",y:1},
+            {label:"Poodle",y:1},
+			{label:"Rhodesian Ridgeback",y:1},
+			{label:"Rottweiler",y:1},
+			{label:"Shepherd",y:2},
+            {label:"Shi Tzu",y:1},
+			{label:"Siberian Husky",y:4},
+			{label:"StaffordshireBull Terrier",y:1},
+			{label:"Terrier",y:2},
+            {label:"Whippet",y:1},
+			{label:"Yorkshire Terrier",y:3}
+
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer1" style="height: 500px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

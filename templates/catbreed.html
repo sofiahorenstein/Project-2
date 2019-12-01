@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+
+
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	title: {
+		text: "Cats by Breed"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+
+			{label:"American Shorthair",y:2},
+			{label:"Domestic Long Hair",y:4},
+			{label:"Domestic Medium Hair",y:6},
+			{label:"Domestic Short Hair",y:62},
+            {label:"Russian Blue",y:1},
+			{label:"Siamese",y:3},
+			{label:"Tabby",y:1}
+
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer1" style="height: 500px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
