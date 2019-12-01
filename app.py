@@ -46,7 +46,7 @@ def index():
     
 @app.route('/wheel')
 def wheel():
-    return render_template("wheel.html")
+    return render_template("wheel2.html")
 
 
 @app.route("/shelters")
