@@ -46,7 +46,7 @@ def index():
     
 @app.route('/wheel')
 def wheel():
-    return render_template("wheel.html")
+    return render_template("wheel2.html")
 
 
 @app.route("/shelters")
@@ -56,7 +56,7 @@ def shelters():
 @app.route("/pie1")
 def pie1():
     return render_template("catage.html")
-    
+
 @app.route("/pie2")
 def pie2():
     return render_template("catbreed.html")
