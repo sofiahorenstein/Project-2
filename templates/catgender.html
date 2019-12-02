@@ -2,14 +2,14 @@
 <html>
 <head>
 <script>
-​
-​
+
+
 window.onload = function() {
-​
+
 var chart = new CanvasJS.Chart("chartContainer1", {
 	animationEnabled: true,
 	title: {
-		text: "Cats by Gender"
+		text: "Dogs by Gender"
 	},
 	data: [{
 		type: "pie",
@@ -17,15 +17,15 @@ var chart = new CanvasJS.Chart("chartContainer1", {
 		yValueFormatString: "##0.00\"%\"",
 		indexLabel: "{label} {y}",
 		dataPoints: [
-​
+
 			{label:"Male",y:48},
 			{label:"Female",y:31}
-​
+
 		]
 	}]
 });
 chart.render();
-​
+
 }
 </script>
 </head>
